@@ -1,14 +1,21 @@
-// Select the line element
-const line = document.getElementById('line');
+document.addEventListener("DOMContentLoaded", () => {
+  // Select the line element
+  const line = document.getElementById("line");
 
-// Initialize the rotation angle
-let angle = 0;
+  if (!line) {
+    console.error("Element with ID 'line' not found.");
+    return;
+  }
 
-// Create a function to update the rotation
-function rotateLine() {
-  angle += 2; // Increase the angle by 2 degrees
-  line.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`; // Rotate the line
-}
+  // Initialize the rotation angle
+  let angle = 0;
 
-// Use setInterval to update the rotation every 20ms
-setInterval(rotateLine, 20);
+  // Create a function to update the rotation
+  function rotateLine() {
+    angle += 2; // Increase the angle by 2 degrees
+    line.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`; // Rotate the line
+  }
+
+  // Use setInterval to update the rotation every 20ms
+  setInterval(rotateLine, 20);
+});
